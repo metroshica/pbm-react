@@ -290,11 +290,8 @@ class LocationDetails extends Component {
                                     //containerStyle={{position:'absolute',bottom:0,right:0}}
                                     size={24}
                                     onPress={() => {
-                                        const addressStr = location.name + " " + location.zip
-                                        openMap({end: location.name + " " + location.zip})
-                                        console.log(location.lat)
-                                        console.log(location.lon)
-                                        console.log(location.name)
+                                        //openMap({query: location.name + " " + location.city + " " + location.state + " " + location.zip})
+                                        openMap({end: location.name + " " + location.city + " " + location.state + " " + location.zip})
                                     }}
                                 /> 
                                 
