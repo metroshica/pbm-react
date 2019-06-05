@@ -219,8 +219,7 @@ class Map extends Component {
                         containerStyle={{position:'absolute',bottom:0,right:0}}
                         size={24}
                         onPress={() => {
-                            openMap({ latitude: 37.865101, longitude: -119.538330 })
-                            //locationTrackingServicesEnabled ? this.updateCurrentLocation() : this.setState({ showNoLocationTrackingModal: true })
+                            locationTrackingServicesEnabled ? this.updateCurrentLocation() : this.setState({ showNoLocationTrackingModal: true })
                         }}
                     /> : null}
                     {filterApplied ?     
