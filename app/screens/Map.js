@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Font } from 'expo'
-import openMap from 'react-native-open-maps';
+import openMap from 'react-native-open-maps'
 import { 
     ActivityIndicator,
     Platform,
@@ -219,7 +219,8 @@ class Map extends Component {
                         containerStyle={{position:'absolute',bottom:0,right:0}}
                         size={24}
                         onPress={() => {
-                            locationTrackingServicesEnabled ? this.updateCurrentLocation() : this.setState({ showNoLocationTrackingModal: true })
+                            openMap({ latitude: 37.865101, longitude: -119.538330 })
+                            //locationTrackingServicesEnabled ? this.updateCurrentLocation() : this.setState({ showNoLocationTrackingModal: true })
                         }}
                     /> : null}
                     {filterApplied ?     
