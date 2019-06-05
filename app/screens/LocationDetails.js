@@ -13,10 +13,16 @@ import {
     View, 
 } from 'react-native'
 import { MapView } from 'expo'
+<<<<<<< HEAD
 import markerDot from '../assets/images/markerdot.png'
 import openMap from 'react-native-open-maps';
 import { Button, ButtonGroup, ListItem, Icon } from 'react-native-elements'
 import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons'
+=======
+import markerDot from '../assets/images/markerdot-ios.png'
+import { Button, ButtonGroup, ListItem } from 'react-native-elements'
+import { FontAwesome, Ionicons } from '@expo/vector-icons'
+>>>>>>> master
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 import { 
     ConfirmationModal, 
@@ -195,6 +201,7 @@ class LocationDetails extends Component {
                     {loggedIn && isUserFave && <FontAwesome style={s.saveLocation} name="heart" onPress={() => this.props.removeFavoriteLocation(location.id)}/>}
                     {loggedIn && !isUserFave && <FontAwesome style={s.saveLocation} name="heart-o" onPress={() => this.props.addFavoriteLocation(location.id)}/>}
                     <MapView
+                        provider = { "google" }
                         mapType={'none'}
                         region={{
                             latitude: Number(location.lat),
