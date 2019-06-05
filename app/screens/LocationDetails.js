@@ -14,8 +14,9 @@ import {
 } from 'react-native'
 import { MapView } from 'expo'
 import markerDot from '../assets/images/markerdot.png'
-import { Button, ButtonGroup, ListItem } from 'react-native-elements'
-import { FontAwesome, Ionicons } from '@expo/vector-icons'
+import openMap from 'react-native-open-maps';
+import { Button, ButtonGroup, ListItem, Icon } from 'react-native-elements'
+import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons'
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 import { 
     ConfirmationModal, 
@@ -281,7 +282,23 @@ class LocationDetails extends Component {
                             <View style={s.locationMeta}>
                                 <Text style={[s.street,s.font18]}>{location.street}</Text>
                                 <Text style={[s.city,s.font18,s.marginB8]}>{location.city}, {location.state} {location.zip}</Text>
+                                 <Icon
+                                    raised
+                                    name='directions'
+                                    type='material'
+                                    color='#1e9dff'
+                                    //containerStyle={{position:'absolute',bottom:0,right:0}}
+                                    size={24}
+                                    onPress={() => {
+                                        const addressStr = location.name + " " + location.zip
+                                        openMap({end: location.name + " " + location.zip})
+                                        console.log(location.lat)
+                                        console.log(location.lon)
+                                        console.log(location.name)
+                                    }}
+                                /> 
                                 
+
                                 {(locationTrackingServicesEnabled || location.location_type_id || location.phone || location.website || location.operator_id || location.description) && <View style={s.hr}></View>}
 
                                 {location.location_type_id || locationTrackingServicesEnabled ? 
@@ -457,6 +474,13 @@ const s = StyleSheet.create({
         borderRadius: 50,
         width: '100%',
         elevation: 0
+    },
+    navigateButton: {
+        marginLeft:25,
+        marginRight:25,
+        height:2,
+        marginBottom:5,
+        backgroundColor:"#D3ECFF"
     },
 })
 
