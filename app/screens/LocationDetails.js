@@ -287,6 +287,7 @@ class LocationDetails extends Component {
                                  <Icon
                                     raised
                                     reverse
+                                    //name='location-on'
                                     name='directions'
                                     type='material'
                                     color='#1e9dff'
