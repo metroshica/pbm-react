@@ -13,16 +13,11 @@ import {
     View, 
 } from 'react-native'
 import { MapView } from 'expo'
-<<<<<<< HEAD
 import markerDot from '../assets/images/markerdot.png'
 import openMap from 'react-native-open-maps';
 import { Button, ButtonGroup, ListItem, Icon } from 'react-native-elements'
 import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons'
-=======
-import markerDot from '../assets/images/markerdot-ios.png'
-import { Button, ButtonGroup, ListItem } from 'react-native-elements'
-import { FontAwesome, Ionicons } from '@expo/vector-icons'
->>>>>>> master
+
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 import { 
     ConfirmationModal, 
@@ -291,11 +286,12 @@ class LocationDetails extends Component {
                                 <Text style={[s.city,s.font18,s.marginB8]}>{location.city}, {location.state} {location.zip}</Text>
                                  <Icon
                                     raised
+                                    reverse
                                     name='directions'
                                     type='material'
                                     color='#1e9dff'
-                                    //containerStyle={{position:'absolute',bottom:0,right:0}}
-                                    size={24}
+                                    size={20}
+                                    containerStyle={{position:'absolute',top:0,right:15}}
                                     onPress={() => {
                                         //openMap({query: location.name + " " + location.city + " " + location.state + " " + location.zip})
                                         openMap({end: location.name + " " + location.city + " " + location.state + " " + location.zip})
